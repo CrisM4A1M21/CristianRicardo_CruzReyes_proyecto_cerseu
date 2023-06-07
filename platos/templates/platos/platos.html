@@ -1,0 +1,6 @@
+{% extends 'platos/base_generic.html' %}
+{% block content %}
+    {% for plato in platos %}
+    <p>{{ plato.nombre }}-{{ plato.precio }}-{{ plato.procedencia }}</p>
+{% endfor %}
+{% endblock %}

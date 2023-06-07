@@ -6,5 +6,5 @@ from django.db import models
 class Platos(models.Model):
     nombre = models.CharField(max_length=50)
     precio = models.IntegerField(default=0)
-
+    procedencia = models.CharField(default='', max_length=75)
 

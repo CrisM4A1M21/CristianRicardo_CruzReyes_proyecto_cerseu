@@ -1,0 +1,6 @@
+{% extends 'meseros/base_generic.html' %}
+{% block content %}
+    {% for mesero in meseros %}
+    <p>{{ mesero.nombre }}-{{ mesero.nacionalidad }}-{{ mesero.edad }}-{{ mesero.procedencia }}</p>
+    {% endfor %}
+{% endblock %}
