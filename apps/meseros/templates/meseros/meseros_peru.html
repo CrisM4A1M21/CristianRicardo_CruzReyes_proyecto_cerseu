@@ -1,0 +1,26 @@
+{% extends 'meseros/base_generic.html' %}
+{%  block content %}
+    <h3>Mostrando a los meseros de Peru con VBC</h3>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for mesero in object_list %}
+                {% if mesero.procedencia == 'Peru' %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                        <td>
+                            <p>{{ mesero.nombre }}-{{ mesero.nacionalidad }}-{{ mesero.edad }}-{{ mesero.procedencia }}</p>
+                        </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

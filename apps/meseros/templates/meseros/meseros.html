@@ -1,0 +1,27 @@
+{% extends 'meseros/base_generic.html' %}
+{% block content %}
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Accion</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for mesero in object_list %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><p>{{ mesero.nombre }}-{{ mesero.nacionalidad }}-{{ mesero.edad }}-{{ mesero.procedencia }}</p></td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'meseros_update_vbc' mesero.id %}" role="button">Editar</a>
+                        <a class="btn btn-danger"  href="{% url 'meseros_delete_vbc' mesero.id %}" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

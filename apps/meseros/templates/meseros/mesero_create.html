@@ -1,0 +1,12 @@
+{% extends 'meseros/base_generic.html' %}
+{% block content %}
+    <div class="card-body">
+        <h1>Crear Mesero con VBC</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a class="btn btn-danger" href="{% url 'meseros_list_vbc' %}">Cancelar</a>
+            <button class="btn btn-success" type="submit">Crear Mesero</button>
+        </form>
+    </div>
+{% endblock %}
